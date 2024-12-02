@@ -1,0 +1,41 @@
+.container-share {
+    background-color: #0e1a28;
+    width: 300px;
+    padding: 40px;
+    border: 3px solid gray;
+    border-radius: 20px;
+}
+
+.share-card__image {
+    width: 150px;
+    height: 150px;
+    margin-top: 50px; 
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.share-name {
+    white-space: nowrap; /* Impede quebras de linha */
+    overflow: hidden; /* Esconde texto que ultrapassa o limite */
+    text-overflow: ellipsis; /* Adiciona '...' se o texto for maior que o espaço disponível */
+    font-size: 1.2rem; /* Ajuste do tamanho do texto */
+    font-weight: bold; /* Destaque para o nome */
+    color: white;
+    margin-bottom: 10px;
+    }
+
+.titulos-share {
+    color: white;
+    text-align: center;
+}
+
+.submenu-share {
+    margin-top: 30px;
+}
+.campos-share{
+    font-size: 30px;
+    font-weight: bold;
+}
+.campos2-share{
+    font-size: 30px;
+}

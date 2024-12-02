@@ -1,0 +1,70 @@
+/* Sidebar.css */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 60px; /* Largura do menu minimizado */
+    height: 100vh;
+    background-color: #0e1a28;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    
+}
+
+.sidebar:hover {
+    width: 250px; /* Largura do menu expandido */
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 20px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.icon {
+    font-size: 24px;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.menu-text {
+    font-size: 16px;
+    white-space: nowrap; /* Garante que o texto não quebre */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sidebar:hover .menu-text {
+    opacity: 1; /* Mostra o texto ao expandir o menu */
+}
+
+.menu-item a {
+    text-decoration: none; /* Remove sublinhado dos links */
+    color: inherit;        /* Usa a cor padrão do texto */
+    display: flex;         /* Para alinhar ícone e texto horizontalmente */
+    align-items: center;   /* Centraliza os itens verticalmente */
+    padding: 10px 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu-item a:hover {
+    background-color: #0e1a28; /* Cor de fundo ao passar o mouse */
+    color: white;           /* Cor do texto ao passar o mouse */
+    border-radius: 5px;  
+    font-weight: bolder;     /* Adiciona bordas arredondadas */
+}
+
+.icon {
+    margin-right: 10px; /* Espaço entre ícone e texto */
+}

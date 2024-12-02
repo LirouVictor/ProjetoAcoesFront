@@ -1,0 +1,70 @@
+.pagination {
+    display: flex;
+    justify-content: center; 
+    align-items: center; /* Espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+.page-button {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    background-color: #0e1a28;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px; 
+}
+
+.page-button.active {
+    background-color: #ffffff;
+    color: #0e1a28;
+    font-weight: bold;
+    cursor: default;
+}
+
+.page-button:hover:not(.active) {
+    background-color: #ffffff;
+    color: #0e1a28;
+    border-color: #0e1a28;
+}
+
+.page-button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Estilo para a linha de itens */
+.carousel-item .row {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens se ajustem à largura disponível */
+    justify-content: space-between; /* Distribui o espaço entre os itens */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 0 auto; /* Centraliza a linha */
+    width: 100%; /* Garante que a linha ocupe toda a largura disponível */
+}
+
+/* Estilo para cada item do carrossel */
+.carousel-item .col-4 {
+    flex: 0 0 calc(33.3333% - 20px); /* 3 colunas por linha com espaçamento */
+    max-width: calc(33.3333% - 20px); /* Max-width ajustado para o espaçamento */
+    box-sizing: border-box; /* Inclui padding/borda no cálculo do tamanho */
+    margin-bottom: 20px; /* Espaço abaixo de cada cartão */
+}
+
+/* Estilo dos cartões (Share) */
+.card-spacing {
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.2s ease-in-out; /* Animação ao passar o mouse */
+}
+
+.card-spacing:hover {
+    transform: scale(1.05); /* Aumenta um pouco o tamanho do cartão ao passar o mouse */
+}
+
+/* Estilo do carrossel (container) */
+.carousel-inner {
+    max-width: 1200px; /* Limita a largura do carrossel */
+    margin: 0 auto; /* Centraliza o carrossel */
+    padding: 20px; /* Adiciona espaçamento interno */
+}
