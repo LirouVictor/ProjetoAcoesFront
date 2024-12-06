@@ -38,7 +38,7 @@ const Login = () => {
     return (
         <div className="login-container">
             <div className="image-container">
-                <img src="https://github.com/qmclouca.png" alt="GitHub Avatar" />
+                <img src="https://imgs.search.brave.com/ab53yGUMezgiblJWYnGXwk3q0cLr8lrwQu6ZFol2fK8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAxLzc2LzI0LzQ1/LzM2MF9GXzE3NjI0/NDU1OF9uNVRkR213/dm9FMUtWU3hnaVBM/ZjVOSWdBTThvcnVp/Vi5qcGc" alt="Avatar" />
             </div>
             <div className="spacer">
                 <h3>Mercado Fácil</h3>

@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Share from "../ShareCards/Share";
 import { FetchShareListPaged } from "../../Servicos/MercadoFacilAPI";
-import { useNavigate } from 'react-router-dom'; // Verifique se está importado corretamente
+import { useNavigate } from 'react-router-dom'; 
 import './PagedList.css'
 
 const PagedList: React.FC = () => {
     const [shares, setShares] = useState<any[]>([]);
     const [page, setPage] = useState(1);
-    const [resultsPerPage] = useState(6); // 6 resultados por página
-    const [totalPages, setTotalPages] = useState(0); // Total de páginas
+    const [resultsPerPage] = useState(6); 
+    const [totalPages, setTotalPages] = useState(0); 
     const [loading, setLoading] = useState(true);
 
-    const maxVisiblePages = 10; // Número máximo de páginas visíveis
+    const maxVisiblePages = 10; 
 
     useEffect(() => {
         const fetchShares = async () => {
             try {
-                setLoading(true); // Inicia o carregamento
+                setLoading(true); 
                 const response = await FetchShareListPaged(page, resultsPerPage);
-                console.log(response); // Verifica se a resposta contém os dados esperados
-                setShares(response.items); // Atualiza o estado com os itens
-                setTotalPages(response.totalPages); // Atualiza o total de páginas
+                console.log(response); 
+                setShares(response.items); 
+                setTotalPages(response.totalPages); 
             } catch (error) {
                 console.error('Erro ao carregar ações: ', error);
             } finally {
-                setLoading(false); // Finaliza o carregamento
+                setLoading(false); 
             }
         };
 
@@ -34,7 +34,7 @@ const PagedList: React.FC = () => {
     const navigate = useNavigate();
     
     const handleShareClick = (symbol: string) => {
-        // Navega para a página de detalhes da ação, usando o símbolo como parâmetro
+        
         navigate(`/acao/${symbol}`);
     };
 
@@ -57,6 +57,7 @@ const PagedList: React.FC = () => {
 
     return (
         <div id="carouselExampleInterval" className="carousel slide" data-bs-ride="carousel">
+            <h2>Lista Geral de Ações</h2>
             <div className="carousel-inner">
                 {loading ? (
                     <div className="spinner-border" role="status">
@@ -69,7 +70,7 @@ const PagedList: React.FC = () => {
                                 <div className="col-4 col-sm-6 col-md-4 card-spacing" key={share.id}>
                                     <button
                                         className="card-button"
-                                        onClick={() => handleShareClick(share.symbol)} // Ação ao clicar
+                                        onClick={() => handleShareClick(share.symbol)} 
                                         style={{ width: '100%', height: '100%', border: 'none', background: 'none' }} 
                                     >
                                         <Share

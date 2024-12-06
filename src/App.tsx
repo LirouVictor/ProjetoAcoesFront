@@ -7,6 +7,7 @@ import PagedList from "./Componentes/PagedList/PagedList";
 import CardInfo from "./Paginas/AreaLogada/CardInfo/CardInfo";
 import SymbolForm from "./Paginas/AreaLogada/SymbolForm/SymbolForm";
 import { SymbolProvider } from "./Context/SymbolContext";
+import SymbolsList from "./Paginas/AreaLogada/SymbolDataDisplay/SymbolsList";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
           <Route path="/AcoesGerais" element={<PagedList />} />
           <Route path="/acao/:symbol" element={<CardInfo />} />
           <Route path="/CadastroSymbols" element={<SymbolForm />} />
+          <Route path="/SymbolsList" element={<SymbolsList />} />
         </Routes>
       </Router>
     </SymbolProvider>

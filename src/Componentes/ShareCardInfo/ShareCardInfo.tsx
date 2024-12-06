@@ -1,45 +1,43 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom'; // useNavigate em vez de useHistory
-import { FetchShareBySymbol } from '../../Servicos/MercadoFacilAPI'; // Função para buscar a ação pelo símbolo
+import { useParams, useNavigate } from 'react-router-dom'; 
+import { FetchShareBySymbol } from '../../Servicos/MercadoFacilAPI'; 
 import './ShareCardInfo.css'
 
 const ShareDetails: React.FC = () => {
-    const { symbol } = useParams(); // Pegando o símbolo da URL
-    const navigate = useNavigate(); // Usando o hook useNavigate para navegação
-    const [shareData, setShareData] = useState<any>(null); // Estado para armazenar os dados da ação
-    const [loading, setLoading] = useState<boolean>(true); // Estado para carregar a página
+    const { symbol } = useParams(); 
+    const navigate = useNavigate();
+    const [shareData, setShareData] = useState<any>(null); 
+    const [loading, setLoading] = useState<boolean>(true); 
 
     useEffect(() => {
         const fetchShare = async () => {
             if (symbol) {
                 try {
-                    const data = await FetchShareBySymbol(symbol); // Fazendo a chamada para a API
-                    setShareData(data); // Armazenando os dados no estado
+                    const data = await FetchShareBySymbol(symbol); 
+                    setShareData(data); 
                 } catch (error) {
                     console.error('Erro ao buscar dados da ação:', error);
                 } finally {
-                    setLoading(false); // Finaliza o carregamento
+                    setLoading(false); 
                 }
             }
         };
         
         fetchShare();
-    }, [symbol]); // Quando o símbolo mudar, a função será chamada novamente
+    }, [symbol]);
 
     if (loading) {
         return (
-            <div>Carregando...</div> // Mensagem de carregamento
+            <div>Carregando...</div>
         );
     }
 
-    // Verificando se os dados da ação foram carregados corretamente
     if (!shareData) {
         return <div>Ação não encontrada.</div>;
     }
 
-    // Função para voltar ao menu de ações
     const goToMenu = () => {
-        navigate('/Home/AreaLogada'); // Substitua '/menu-acoes' pela rota do seu menu
+        navigate('/Home/AreaLogada'); 
     };
 
     return (

@@ -3,11 +3,11 @@
 }
 
 .symbol-form-content {
-    flex: 1; /* Isso vai permitir que o conteúdo ocupe o restante da largura */
+    flex: 1; 
     padding: 20px;
     background-color: #0e1a28;
     border: 0.01px solid gray;
-    border-radius: 8px; /* Cantos arredondados */
+    border-radius: 8px; 
 }
 
 .symbol-form {

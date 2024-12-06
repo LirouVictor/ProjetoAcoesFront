@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importa o componente Link
+import { Link } from "react-router-dom"; 
 import "./Sidebar.css";
 
 const Sidebar: React.FC = () => {
@@ -13,7 +13,7 @@ const Sidebar: React.FC = () => {
                     </Link>
                 </div>
                 <div className="menu-item">
-                    <Link to="/">
+                    <Link to="/SymbolsList">
                         <i className="icon fa fa-star"></i>
                         <span className="menu-text">Ações Favoritas</span>
                     </Link>

@@ -6,10 +6,8 @@ type SymbolContextType = {
     removeSymbol: (index: number) => void;
 };
 
-// Criação do Contexto
 const SymbolContext = createContext<SymbolContextType | undefined>(undefined);
 
-// Hook para acessar o contexto
 export const useSymbolContext = () => {
     const context = useContext(SymbolContext);
     if (!context) {
@@ -18,15 +16,12 @@ export const useSymbolContext = () => {
     return context;
 };
 
-// Provedor do Contexto
 export const SymbolProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [symbols, setSymbols] = useState<string[]>(() => {
-        // Busca os dados do localStorage ao inicializar
         const storedSymbols = localStorage.getItem("symbols");
         return storedSymbols ? JSON.parse(storedSymbols) : [];
     });
 
-    // Atualiza o localStorage sempre que o estado mudar
     useEffect(() => {
         localStorage.setItem("symbols", JSON.stringify(symbols));
     }, [symbols]);

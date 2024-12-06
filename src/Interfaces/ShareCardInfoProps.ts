@@ -35,6 +35,4 @@ export interface ShareCardInfoProps{
         "updatedAt" : string | null,
         "active" : boolean,
         "isDeleted" : boolean
-      
-      
 };

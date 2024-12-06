@@ -3,7 +3,7 @@ import { LoginData } from '../Interfaces/LoginData';
 import { Usuario } from '../Interfaces/Usuario';
 
 const apiClient = axios.create({
-    baseURL: 'https://jjkbpm4r-5165.brs.devtunnels.ms/', 
+    baseURL: 'https://tcwhl22p-5165.brs.devtunnels.ms/', 
     headers:{
         'Content-Type': 'application/json'
     }
@@ -48,7 +48,7 @@ export const FetchShareBySymbol = async (symbol: string) =>{
 export const FetchShareListPaged = async (page: number, resultsByPage: number) => {
     try {
         // A URL final será: https://x1vxxxvv-5165.brs.devtunnels.ms/Share/${page},${resultsByPage}
-        const url = `https://jjkbpm4r-5165.brs.devtunnels.ms/Share/${page}, ${resultsByPage}`;
+        const url = `https://tcwhl22p-5165.brs.devtunnels.ms/Share/${page}, ${resultsByPage}`;
         console.log(url);
         const response = await apiClient.get(url, 
             {
